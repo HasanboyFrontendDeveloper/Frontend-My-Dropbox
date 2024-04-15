@@ -1,0 +1,22 @@
+.sidebar {
+  position: absolute;
+  top: 75px;
+  right: 170px;
+  background-color: #222;
+  padding: 30px 40px;
+  border-radius: 10px;
+  z-index: 2;
+  
+}
+.sidebar h3{
+  color: #fff;
+  line-height: 30px;
+}
+.sidebar h3 span{
+  color: #39bda7;
+}
+.sidebar button{
+  display: block;
+  margin:  15px 0;
+  width: 200px;
+}
