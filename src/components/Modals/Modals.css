@@ -94,7 +94,7 @@
 }
 
 
-.submit-btn label {
+.submit-btn label, .submit-btn span {
   position: relative;
   z-index: 1;
 }

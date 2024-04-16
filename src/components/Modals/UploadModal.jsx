@@ -5,7 +5,7 @@ import "./Modals.css";
 
 const UploadModal = ({ show, setShow, uploadFile }) => {
   const [fileName, setFileName] = useState('')
-  const [file, setFile] = useState({});
+  const [file, setFile] = useState(null);
 
   const closeHandler = (e) => {
     if (e.target.className === "upload-box show") {
@@ -17,11 +17,9 @@ const UploadModal = ({ show, setShow, uploadFile }) => {
     e.preventDefault();
     uploadFile(file, fileName)
     setShow("hide");
-    setFile({})
+    setFile(null)
     setFileName('')
   };
-
-  console.log('upload');
 
   return (
     <div className={`upload-box ${show}`} onClick={closeHandler}>
@@ -38,9 +36,9 @@ const UploadModal = ({ show, setShow, uploadFile }) => {
               onChange={(e) => setFileName(e.target.value)}
               required
             />
-            <button className="submit-btn" onClick={()=> {document.getElementsByClassName('upload').click()}}>
+            <button className="submit-btn">
               <label>
-                Choose file
+                Choose file {`${file !== null ? file?.name  : ''}`}
                 <input
                   type="file"
                   className="upload"
