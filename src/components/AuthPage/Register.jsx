@@ -6,8 +6,6 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
 import { useState } from "react";
 
 import "./AuthPage.css";
-import { addDoc, collection } from "firebase/firestore";
-import { accountDB } from "../../firebase/firebase";
 
 const initialState = {
   username: "",
@@ -27,8 +25,6 @@ const Register = ({createUserFolder}) => {
       createUserWithEmailAndPassword(auth, value.email, value.password)
         .then(() => {
           setWrongMsg("");
-          const accountRef = collection(accountDB, "account");
-          addDoc(accountRef, { username: value.username, email: value.email });
           createUserFolder(value.email)
           updateProfile(auth.currentUser, { displayName: value.username })
         })

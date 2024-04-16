@@ -38,16 +38,18 @@ const UploadModal = ({ show, setShow, uploadFile }) => {
               onChange={(e) => setFileName(e.target.value)}
               required
             />
-            <button className="submit-btn">
-              <span>
+            <button className="submit-btn" onClick={()=> {document.getElementsByClassName('upload').click()}}>
+              <label>
+                Choose file
                 <input
                   type="file"
                   className="upload"
                   name="file"
                   onChange={(e) => setFile(e.target.files[0])}
                   required
+                  hidden
                 />
-              </span>
+              </label>
             </button>
             <div className="submit-btn-box">
               <button className="submit-btn">
